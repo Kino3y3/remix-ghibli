@@ -13,7 +13,7 @@ export function links() {
 }
 
 export function meta() {
-  return { title: "New Remix App" };
+  return { title: "Studio Ghibli", description: "A description" };
 }
 
 export default function App() {
