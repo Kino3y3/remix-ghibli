@@ -14,7 +14,7 @@ export default function FilmIndex() {
   const films = useLoaderData();
   return (<div className="p-16 font-sans">
       <h1 className="text-5xl font-bold text-center">Studio Ghibli Films</h1>
-      <Form action="" className="py-5">
+      <Form reloadDocument method="get" className="py-5">
         <label htmlFor="" className="font-bold">
           Search{` `}
           <input
