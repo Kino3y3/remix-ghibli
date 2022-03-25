@@ -22,3 +22,15 @@ export async function getFilmById(filmId) {
 
   return { ...film, characters };
 }
+
+export async function getFilmCharacter(characterId) {
+  const response = await fetch(
+    `https://ghibliapi.herokuapp.com/people/${characterId}`
+  );
+
+  if (!response.ok) {
+    throw response;
+  }
+
+  return response.json();
+}

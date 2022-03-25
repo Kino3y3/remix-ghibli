@@ -1,7 +1,7 @@
 import React from "react";
 import { useLoaderData, Form, Link } from "remix";
 import { getFilms } from "~/api/films";
-import Test from "~/components/Test"
+import Test from "~/components/Test";
 
 // SERVER SIDE
 export const loader = async ({ request }) => {
@@ -16,7 +16,7 @@ export default function FilmIndex() {
   return (
     <div className="p-16 font-sans">
       <h1 className="text-center text-5xl font-bold">Studio Ghibli Films</h1>
-      <Test/>
+      {/*<Test/>*/}
       <Form reloadDocument method="get" className="py-5">
         <label htmlFor="" className="font-bold">
           Search{` `}

@@ -1,4 +1,4 @@
-import { Link } from "remix";
+import { Link, NavLink } from "remix";
 
 export default function CharacterList({ characters }) {
   return (
@@ -6,13 +6,19 @@ export default function CharacterList({ characters }) {
       <h3 className="text-3xl">Characters</h3>
       <ul className="my-3 flex flex-col space-y-3">
         {characters?.map((character) => (
-          <li>
-            <Link
+          <li key={character.id}>
+            <NavLink
               to={"characters/" + character.id}
-              className="inline-block w-full rounded border border-slate-400 p-3 hover:underline"
+              className={({ isActive }) =>
+                `inline-block w-full rounded border border-slate-400 p-3 hover:underline ${
+                  isActive
+                    ? `border-2 bg-slate-300 font-bold text-black`
+                    : `text-blue-500`
+                }`
+              }
             >
               {character.name}
-            </Link>
+            </NavLink>
           </li>
         ))}
       </ul>

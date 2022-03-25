@@ -1,9 +1,13 @@
 import React from "react";
-import { useLoaderData } from "remix";
+import { Outlet, useLoaderData } from "remix";
 import { getFilmById } from "~/api/films";
 import invariant from "tiny-invariant";
 import FilmBanner from "~/components/FilmBanner";
 import CharacterList from "~/components/CharacterList";
+
+export const meta = ({ data }) => {
+  return { title: data.title, description: data.description };
+};
 
 export const loader = async ({ params }) => {
   invariant(params.filmId, "expected params.filmId");
@@ -26,6 +30,9 @@ export default function Film() {
 
         <div className="flex space-x-5 py-5">
           <CharacterList characters={film.characters} />
+          <div className="flex-1">
+            <Outlet />
+          </div>
         </div>
       </div>
     </div>
