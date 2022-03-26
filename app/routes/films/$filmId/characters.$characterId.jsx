@@ -8,7 +8,7 @@ export let loader = async ({ params }) => {
   // for ErrorBoundary
   // throw new Error("RANDOM ERROR!!");
 
-  throw new Response("Not Found", { status: 404 });
+  // throw new Response("Not Found", { status: 404 });
   // throw json("Different message", { status: 404 });
 
   return getFilmCharacter(params.characterId);
